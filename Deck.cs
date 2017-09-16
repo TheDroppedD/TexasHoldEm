@@ -53,7 +53,7 @@ namespace TexasHoldEm
         }
 
         public void shuffleDeck()
-        {//asdasd
+        {
             theDeck.Sort(Compare);
             theDeck.Sort(Compare);
         }
