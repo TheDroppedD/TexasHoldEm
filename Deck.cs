@@ -22,6 +22,12 @@ namespace TexasHoldEm
                      theDeck.Add(c1);
             }
         }
-    }
+        }
+        public Card drawCard() {
+            Card c1 = theDeck[0];
+            theDeck.RemoveAt(0);
+            //Console.WriteLine(c1.ToString()); //For testing
+            return c1;
+        }
 }
 }
