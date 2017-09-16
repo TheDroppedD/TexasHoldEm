@@ -1,3 +1,2 @@
-bin/debug/
-bin/obj/Debug/
-bin/obj/
+bin/debug/*
+bin/obj/*

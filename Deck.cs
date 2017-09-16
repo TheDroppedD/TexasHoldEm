@@ -65,9 +65,7 @@ namespace TexasHoldEm
             */
             theDeck.Sort(Compare);
             theDeck.Sort(Compare);
-            foreach(Card c in theDeck) {
-                Console.WriteLine(c);
-            }
+            
 
         }
     }
