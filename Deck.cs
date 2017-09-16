@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace TexasHoldEm
 {
     class Deck{
-        List<Card> theDeck = new List<Card>();
+        private List<Card> theDeck = new List<Card>();
         /*private enum values {Two = 2, Three, Four, Five, Six,
         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
         */
