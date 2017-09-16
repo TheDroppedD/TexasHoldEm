@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jeremy\\.nuget\\packages\\": {},
+    "C:\\Users\\PART\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
+      "projectUniqueName": "c:\\Users\\PART\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
       "projectName": "TexasHoldEm",
-      "projectPath": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
-      "packagesPath": "C:\\Users\\Jeremy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\obj\\",
+      "projectPath": "c:\\Users\\PART\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
+      "packagesPath": "C:\\Users\\PART\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\PART\\Documents\\GitHub\\TexasHoldEm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jeremy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\PART\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

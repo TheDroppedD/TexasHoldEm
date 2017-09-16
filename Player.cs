@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Timers;
 namespace TexasHoldEm
 
 {
@@ -9,8 +10,7 @@ namespace TexasHoldEm
         int chips = 500;
 
 
-        Player(int chips){
-            this.chips = chips;
+        Player(){
         }
         public void playerTurn(){
             //Timer, lights here
@@ -39,11 +39,7 @@ namespace TexasHoldEm
         public void Raise(){
 
         }
-        /*
-        Fold();
-        Check():
-        Raise();
-         */
+
 
     }
 }
