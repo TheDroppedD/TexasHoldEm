@@ -8,9 +8,11 @@ namespace TexasHoldEm
     class Player{
         Hand Phand;
         int Chips = 500;
+        Boolean isPlaying = true;
 
 
         Player(){
+            Phand = new Hand(new List<Card>());
         }
         public void playerTurn(){
             //Timer, lights here
@@ -31,9 +33,12 @@ namespace TexasHoldEm
             }
         }
         public void Fold(){
+            //player can no longer move
+            isPlaying  = false;
 
         }
         public void Check(){
+            
 
         }
         public void Raise(){
