@@ -1,16 +1,2 @@
-<<<<<<< HEAD
-bin\Debug\*
-obj\*
-obj/Debug/netcoreapp2.0/TexasHoldEm.csproj.CoreCompileInputs.cache
-=======
-\bin\Debug\*
-\obj\*
->>>>>>> 923b442b91fdf48bbf2a63a2b8a94d1e2e8def2c
-*.dll
-*.pdb
-*.json
-*.cache
-obj/TexasHoldEm.csproj.nuget.cache
-obj/Debug/netcoreapp2.0/CoreCompileInputs.cache
-obj/project.assets.json
-obj/TexasHoldEm.csproj.nuget.cache
+bin/Debug/
+bin/obj/*
