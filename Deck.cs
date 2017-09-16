@@ -5,18 +5,22 @@ namespace TexasHoldEm
 {
     class Deck{
         Collection<Card> theDeck;
-        private enum values {Two = 2, Three, Four, Five, Six,
+        /*private enum values {Two = 2, Three, Four, Five, Six,
         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
+        */
+        //TODO Figure out how to make this better
+        private Collection<string> cardRanks = new Collection<string>{"Two", "Three", "Four", "Five", "Six", "Seven",
+                                                                         "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
+
         private Collection<string> suits = new Collection<string>{"Spades","Hearts", "Clubs", "Diamonds"};
         
 
          public Deck(){
+             foreach(string suit in suits){
+                 foreach(string cardRank in cardRanks){
+                     theDeck.Add(new Card(suit, cardRank));
+                 }
+             }
          }
-         
-        /*
-        public void shuffleDeck();
-        public Card drawCard();
-        public 
-         */ 
     }
 }
