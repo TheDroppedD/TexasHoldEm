@@ -11,3 +11,7 @@ https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code
 
 TutorialsPoint:
 https://www.tutorialspoint.com/csharp/csharp_program_structure.htm
+
+
+Properties:
+Readonly = final //in Java
