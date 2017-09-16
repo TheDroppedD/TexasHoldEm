@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 bin/Debug/
+=======
+bin/debug/*
+>>>>>>> Jeremy's-Branch
 bin/obj/*
