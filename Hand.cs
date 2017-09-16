@@ -5,8 +5,8 @@ namespace TexasHoldEm
 
 {
     class Hand{
-        private Collection<Card> cards;
-        public Hand(Collection<Card> cards){
+        private List<Card> cards;
+        public Hand(List<Card> cards){
             this.cards = cards;
         }
 

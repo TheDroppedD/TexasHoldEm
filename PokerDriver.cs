@@ -7,14 +7,16 @@ namespace TexasHoldEm {
         List<Player> players;
         int moneyPot;
         int currentBet;
+        int numRounds;
+        List<Player> playersInRound;
 
         public void roundStart(){
-
+            
         }
-
         static void Main(string[] args) {
             Console.WriteLine("This is WORKING!");
             Deck aDeck = new Deck();
+
         }
     }
 }

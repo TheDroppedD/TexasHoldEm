@@ -39,6 +39,8 @@ namespace TexasHoldEm
         public void Raise(){
 
         }
+        public void Pay(Player p1, int amount){
+        }
 
 
     }
