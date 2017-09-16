@@ -5,9 +5,9 @@ namespace TexasHoldEm
 {
     class Hand: IComparer<Card> {
         private List<Card> cards;
-        private List<string> suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
-        public Hand(List<Card> cards){
-            this.cards = cards;
+        private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
+        public Hand(){
+            cards = new List<Card>();
         }
 
         public void add(Card focusCard){
@@ -35,7 +35,7 @@ namespace TexasHoldEm
             
             foreach(Card c1 in cards){
                 for(int i = 0; i < 4; i++){
-                    if (c1.suit == suits[i]){
+                    if (c1.Suit == Suits[i]){
                         if (i == 1){
                             spadeCount++;
                         }
@@ -54,12 +54,20 @@ namespace TexasHoldEm
                     }
                 }
             }
+            return 0;
         }
-        public boolean isRoyalFlush(){
+
+        public void sortHand() {
+            cards.Sort(Compare);
+            foreach(Card c in cards) {
+                Console.WriteLine(c);
+            }
+        }
+      /*   public boolean isRoyalFlush(){
             int count = 0;
             foreach(Card c1 in cards){
                 if (c1.}
-        }
+        } */
     
     }
 }
