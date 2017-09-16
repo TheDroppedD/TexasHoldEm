@@ -5,18 +5,33 @@ namespace TexasHoldEm
     class Card
     {
         public string Suit { get; set; }
+        /* 
+        private int _pSuit ;
+        public string pSuit {
+            get {return _pSuit;}
+            set {_pSuit = value;}}
         public string Rank { get; set; }
+        */
         private enum Values
         {
             Two = 2, Three, Four, Five, Six,
             Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
         }
 
+        
 
         public Card(string suit, string rank)
         {
             this.Suit = suit;
             this.Rank = rank; //Make sure this field is capitilized
+
+
+            Card c = new Card(){
+                pSuit = "King", 
+                
+                };
+            c.pSuit = 
+
         }
 
         //Using the enum types to give us the card value

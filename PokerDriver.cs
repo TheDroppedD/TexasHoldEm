@@ -17,7 +17,7 @@ namespace TexasHoldEm {
         static void Main(string[] args) {
             Console.WriteLine("This is WORKING!");
             Board game = new Board();
-            game.startGame();
+            game.playRound();
         } //rotation is repeated until people stop betting
     }
 }
