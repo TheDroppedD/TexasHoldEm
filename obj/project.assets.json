@@ -670,19 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "c:\\Users\\PART\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
+      "projectUniqueName": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
       "projectName": "TexasHoldEm",
-      "projectPath": "c:\\Users\\PART\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
-      "packagesPath": "C:\\Users\\PART\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\PART\\Documents\\GitHub\\TexasHoldEm\\obj\\",
-=======
-      "projectUniqueName": "c:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
-      "projectName": "TexasHoldEm",
-      "projectPath": "c:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
+      "projectPath": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
       "packagesPath": "C:\\Users\\Jeremy\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\obj\\",
->>>>>>> 817756fc8c4d5cad8f94597b797d6fb9d782788f
+      "outputPath": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
