@@ -4,7 +4,7 @@ namespace TexasHoldEm
 {
     class Deck : IComparer<Card>
     {
-        private readonly int deckSize = 52;
+        private readonly int Decksize = 52;
         private List<Card> theDeck = new List<Card>();
 
         /*private enum values {Two = 2, Three, Four, Five, Six,

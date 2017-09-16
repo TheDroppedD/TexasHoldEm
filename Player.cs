@@ -6,8 +6,8 @@ namespace TexasHoldEm
 
 {
     class Player{
-        Hand pHand;
-        int chips = 500;
+        Hand Phand;
+        int Chips = 500;
 
 
         Player(){
