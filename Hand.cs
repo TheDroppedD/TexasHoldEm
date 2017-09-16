@@ -11,5 +11,12 @@ namespace TexasHoldEm
             this.cards = cards;
         }
 
+        public void add(Card focusCard){
+            cards.Add(focusCard);
+        }
+        public void remove(Card focusCard){
+            cards.Remove(focusCard);
+        }
+
     }
 }
