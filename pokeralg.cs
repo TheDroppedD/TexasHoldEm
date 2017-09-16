@@ -1,13 +1,17 @@
 using System;
 namespace TexasHoldEm {
 
-    class pokeralg {
+    class PokerAlg {
+
+
+        //We want send in all hands
         enum legitHands {
             Straight_Flush = 1, Four_of_a_Kind, Full_House, Flush, Straight, Three_of_a_Kind, Two_Pair, One_Pair, High_Card
-        }
+        }//In Use
+        
 
         // define RANK(x) ((x >> 8) & 0xF)
-        public String[] value_str = {"","Straight Flush","Four of a Kind","Full House","Flush","Straight","Three of a Kind","Two Pair","One Pair","High Card"}
+        //public String[] value_str = {"","Straight Flush","Four of a Kind","Full House","Flush","Straight","Three of a Kind","Two Pair","One Pair","High Card"}
 
         enum legitSuits {
             CLUB=0x8000,DIAMOND=0x4000, HEART =  0x2000, SPADE  = 0x1000
@@ -17,18 +21,50 @@ namespace TexasHoldEm {
             Two = 0, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
         }
 
-        uint[] flushes;
-        uint[] unique5;
+    int hand_rank( uint val ) {
+    if (val > 6185) {
+        return enumPrint("High_Card");
+    }        // 1277 high card
+    if (val > 3325) {
+        return enumPrint("One_Pair");
+    }         // 2860 one pair 
+    if (val > 2467) {
+        return enumPrint("Two_Pair");
+    }      //  858 two pair
+    if (val > 1609) {
+        return enumPrint("Three_of_a_Kind");
+    }  //  858 three-kind
+    if (val > 1599) {
+        return enumPrint("Straight");
+    }         //   10 straights
+    if (val > 322)  {
+        return enumPrint("Flush");
+    }           // 1277 flushes
+    if (val > 166)  return enumPrint("Full_House");      //  156 full house
+    if (val > 10)   return enumPrint("Four_of_a_Kind");   //  156 four-kind
+    return enumPrint("Straight_Flush");                   //   10 straight-flushes
+}//Done
 
+    public int enumPrint(string s) { //Auxilary function for hand_rank
+        legitHands retEnum;
+        Enum.TryParse(s, out retEnum);
+        return Int32.Parse(retEnum.ToString());
+    }
+    uint[] flushes;
+    uint[] unique5;
+
+        //Function exists to put uint u in a structure the matches the algorithm
+        //in 32 bits, after find_fast(), 
+        // u = xxxbbbbb bbbbbbbb cdhsrrrr xxpppppp 
         public uint find_fast(uint u) {
                 uint a,b,r;
-                u += 0xe91aaa35;
-                u ^= u >> 16;
-                u += u << 8;
-                u ^= u >> 4;
-                b = (u >> 8) & 0x1ff;
-                a = (u + (u << 2)) >> 19;
-                r = a ^ hash_adjust[b];
+                u += 0xe91aaa35; //Adds
+                u ^= u >> 16; //Bitwise Exclusive | right hand side has a 16 bit right shift
+                u += u << 8; //8 bit left shit
+                u ^= u >> 4; //Bitwise Exclusive | right hand side has an 8 bit right shift
+                b = (u >> 8) & 0x1ff; // b = u 8 bit right shift and 0x1ff
+                a = (u + (u << 2)) >> 19; //a = u left shift 2 bits + u right shifted 19 bits
+                r = a ^ hash_adjust[b]; //r = a XOR hash_adjust[b]
                 return r;
         }
 

@@ -5,6 +5,7 @@ namespace TexasHoldEm
     class Card
     {
         public string Suit { get; set; }
+        public string Rank {get ; set;}
         /* 
         private int _pSuit ;
         public string pSuit {
@@ -25,12 +26,13 @@ namespace TexasHoldEm
             this.Suit = suit;
             this.Rank = rank; //Make sure this field is capitilized
 
-
+/* 
             Card c = new Card(){
                 pSuit = "King", 
                 
                 };
             c.pSuit = 
+            */
 
         }
 
