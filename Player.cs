@@ -6,8 +6,39 @@ namespace TexasHoldEm
 {
     class Player{
         Hand pHand;
-        int money;
+        int chips = 500;
 
+
+        Player(int chips){
+            this.chips = chips;
+        }
+        public void playerTurn(){
+            //Timer, lights here
+            Console.WriteLine("What is your move?");
+            Console.WriteLine("ENTER 1 for Raise, ENTER 2 for Fold, ENTER 3 for Check ");
+            string inp = Console.ReadLine();
+            switch(inp){
+                case "1":
+                    Raise();
+                    break;
+                case "2":
+                    Fold();
+                    break;
+                case "3":
+                    Check();
+                    break;
+
+            }
+        }
+        public void Fold(){
+
+        }
+        public void Check(){
+
+        }
+        public void Raise(){
+
+        }
         /*
         Fold();
         Check():
