@@ -4,32 +4,47 @@ namespace TexasHoldEm
 {
     class Card{
         private string suit;
-        private string rank; //Holds Word (ie; two)
+        private string rank;
         private enum values {Two = 2, Three, Four, Five, Six,
-         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
+        Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
          
 
          public Card(string suit, string rank){
              this.suit = suit;
-             this.rank = rank; 
-         }//Card()
-
+             this.rank = rank; //Make sure this field is capitilized
+         }
          //Setters for Card
          public void setSuit(string suit) {
              this.suit = suit;
-         }//setSuit
+         }
 
          public void setRank(string rank) {
             this.rank = rank;
-         }//setRank
+         }
 
         //Getters for Card
         public string getSuit() {
             return suit;
-        }//getSuit()
-
-        public string getRank() {
+        }
+        public string getRank(){
             return rank;
-        }//getRank()
+        }
+
+        //Using the enum types to give us the card value
+        public int getRankValue() {
+            values valRank;
+            if(Enum.TryParse(rank, out valRank)){
+                if(Enum.IsDefined(typeof(values), valRank)){
+                    int retString = Int32.Parse(valRank.ToString());
+                    return retString;
+                }
+            }
+            return 99;
+        }
+
+
     }
 }
+
+
+//Todo implement enum to replace getRankValue
