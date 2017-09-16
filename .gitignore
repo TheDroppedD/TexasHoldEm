@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 bin\Debug\*
 obj\*
 obj/Debug/netcoreapp2.0/TexasHoldEm.csproj.CoreCompileInputs.cache
+=======
+\bin\Debug\*
+\obj\*
+>>>>>>> 923b442b91fdf48bbf2a63a2b8a94d1e2e8def2c
