@@ -9,6 +9,9 @@ namespace TexasHoldEm
         int money;
 
         /*
+        Fold();
+        Check():
+        Raise();
          */
 
     }
