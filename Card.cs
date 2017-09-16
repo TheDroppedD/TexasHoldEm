@@ -3,8 +3,8 @@ namespace TexasHoldEm
 
 {
     class Card{
-        private string suit;
-        private string rank;
+        public string suit{ get; set;}
+        public string rank{ get; set;}
         private enum values {Two = 2, Three, Four, Five, Six,
         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
          
@@ -13,23 +13,7 @@ namespace TexasHoldEm
              this.suit = suit;
              this.rank = rank; //Make sure this field is capitilized
          }
-         //Setters for Card
-         public void setSuit(string suit) {
-             this.suit = suit;
-         }
-
-         public void setRank(string rank) {
-            this.rank = rank;
-         }
-
-        //Getters for Card
-        public string getSuit() {
-            return suit;
-        }
-        public string getRank(){
-            return rank;
-        }
-
+        
         //Using the enum types to give us the card value
         public int getRankValue() {
             values valRank;

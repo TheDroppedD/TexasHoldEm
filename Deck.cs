@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace TexasHoldEm
 {
     class Deck{
-        List<Card> theDeck;
+        List<Card> theDeck = new List<Card>();
         /*private enum values {Two = 2, Three, Four, Five, Six,
         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
         */
@@ -18,8 +18,8 @@ namespace TexasHoldEm
             foreach(string suit in suits){
                 foreach(string cardRank in cardRanks){
                      Card c1 = new Card(suit, cardRank);
-                     //Console.WriteLine(c1.ToString()); For testing
-                     theDeck.Add(new Card(suit, cardRank));
+                     //Console.WriteLine(c1.ToString()); //For testing
+                     theDeck.Add(c1);
             }
         }
     }
