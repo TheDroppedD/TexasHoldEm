@@ -10,3 +10,7 @@ obj/Debug/netcoreapp2.0/TexasHoldEm.csproj.CoreCompileInputs.cache
 *.pdb
 *.json
 *.cache
+obj/TexasHoldEm.csproj.nuget.cache
+obj/Debug/netcoreapp2.0/CoreCompileInputs.cache
+obj/project.assets.json
+obj/TexasHoldEm.csproj.nuget.cache
