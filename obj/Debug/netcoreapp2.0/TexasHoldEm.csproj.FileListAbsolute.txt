@@ -1,0 +1,10 @@
+C:\Users\Jeremy\Documents\GitHub\TexasHoldEm\obj\Debug\netcoreapp2.0\TexasHoldEm.csproj.CoreCompileInputs.cache
+C:\Users\Jeremy\Documents\GitHub\TexasHoldEm\obj\Debug\netcoreapp2.0\TexasHoldEm.AssemblyInfoInputs.cache
+C:\Users\Jeremy\Documents\GitHub\TexasHoldEm\obj\Debug\netcoreapp2.0\TexasHoldEm.AssemblyInfo.cs
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\bin\Debug\netcoreapp2.0\TexasHoldEm.deps.json
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\bin\Debug\netcoreapp2.0\TexasHoldEm.runtimeconfig.json
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\bin\Debug\netcoreapp2.0\TexasHoldEm.runtimeconfig.dev.json
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\bin\Debug\netcoreapp2.0\TexasHoldEm.dll
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\bin\Debug\netcoreapp2.0\TexasHoldEm.pdb
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\obj\Debug\netcoreapp2.0\TexasHoldEm.dll
+c:\Users\Jeremy\Documents\GitHub\TexasHoldEm\obj\Debug\netcoreapp2.0\TexasHoldEm.pdb
