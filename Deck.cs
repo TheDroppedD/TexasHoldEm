@@ -20,8 +20,8 @@ namespace TexasHoldEm
                      Card c1 = new Card(suit, cardRank);
                      //Console.WriteLine(c1.ToString()); //For testing
                      theDeck.Add(c1);
+                }
             }
-        }
         }
         public Card drawCard() {
             Card c1 = theDeck[0];
@@ -29,5 +29,14 @@ namespace TexasHoldEm
             //Console.WriteLine(c1.ToString()); //For testing
             return c1;
         }
-}
+        
+        public void shuffle(){
+            List<Card> retDeck = new List<Card>(52);
+            for (int i = 0; i < 26; i++){
+                retDeck[i] = drawCard();
+                retDeck[i+26] = drawCard();
+            }
+        }
+        
+    }
 }
