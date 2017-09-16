@@ -3,7 +3,7 @@ using System.Collections;
 namespace TexasHoldEm {
 
 class CustomerCardRankComparer : IComparer {
-    int IComparer.Compare(Card x, Card y) {
+    int IComparer.Compare(Object x, Object y) {
         Card c1 = (Card)x;
         Card c2 = (Card)y;
         //getRankValue

@@ -19,10 +19,9 @@ namespace TexasHoldEm
             foreach(string suit in suits){
                 foreach(string cardRank in cardRanks){
                      Card c1 = new Card(suit, cardRank);
-                     theDeck.Add(c1);
-                     Console.WriteLine(c1);
+                     theDeck.Add(new Card(suit, cardRank));
                 }
             }
-        }  
+        }
     }
 }
