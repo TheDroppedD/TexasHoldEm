@@ -1,5 +1,7 @@
 using System;
 namespace TexasHoldEm
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 {
     class Deck{
@@ -11,6 +13,10 @@ namespace TexasHoldEm
          public Deck(Collection<Card> theDeck){
              this.theDeck = theDeck;
          }
-         
+        /*
+        public void shuffleDeck();
+        public Card drawCard();
+        public 
+         */ 
     }
 }
