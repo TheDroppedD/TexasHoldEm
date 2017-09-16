@@ -5,27 +5,27 @@ namespace TexasHoldEm
     class Deck : IComparer<Card>
     {
         private readonly int Decksize = 52;
-        private List<Card> theDeck = new List<Card>();
+        private List<Card> Thedeck = new List<Card>();
 
         /*private enum values {Two = 2, Three, Four, Five, Six,
         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
         */
         //TODO Figure out how to make this better
-        private List<string> cardRanks = new List<string>{"Two", "Three", "Four", "Five", "Six", "Seven",
+        private List<string> Cardranks = new List<string>{"Two", "Three", "Four", "Five", "Six", "Seven",
                                                                          "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
 
-        private List<string> suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
+        private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
 
 
         public Deck()
         {
-            foreach (string suit in suits)
+            foreach (string Suit in Suits)
             {
-                foreach (string cardRank in cardRanks)
+                foreach (string Cardrank in Cardranks)
                 {
-                    Card c1 = new Card(suit, cardRank);
+                    Card c1 = new Card(Suit, Cardrank);
                     //Console.WriteLine(c1.ToString()); //For testing
-                    theDeck.Add(c1);
+                    Thedeck.Add(c1);
                 }
             }
         }
@@ -33,8 +33,8 @@ namespace TexasHoldEm
 
         public Card drawCard()
         {
-            Card c1 = theDeck[0];
-            theDeck.RemoveAt(0);
+            Card c1 = Thedeck[0];
+            Thedeck.RemoveAt(0);
             //Console.WriteLine(c1.ToString()); //For testing
             return c1;
         }
@@ -54,8 +54,8 @@ namespace TexasHoldEm
 
         public void shuffleDeck()
         {//asdasd
-            theDeck.Sort(Compare);
-            theDeck.Sort(Compare);
+            Thedeck.Sort(Compare);
+            Thedeck.Sort(Compare);
         }
         
     }//Deck
