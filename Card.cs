@@ -41,6 +41,9 @@ namespace TexasHoldEm
             }
             return 99;
         }
+        public string toString(){
+            return "[" + rank + " of " + suit + "]";
+        }
 
 
     }

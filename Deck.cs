@@ -15,12 +15,14 @@ namespace TexasHoldEm
         private Collection<string> suits = new Collection<string>{"Spades","Hearts", "Clubs", "Diamonds"};
         
 
-         public Deck(){
-             foreach(string suit in suits){
-                 foreach(string cardRank in cardRanks){
-                     theDeck.Add(new Card(suit, cardRank));
-                 }
-             }
-         }
+        public Deck(){
+            foreach(string suit in suits){
+                foreach(string cardRank in cardRanks){
+                     Card c1 = new Card(suit, cardRank);
+                     theDeck.Add(c1);
+                     Console.WriteLine(c1);
+                }
+            }
+        }  
     }
 }
