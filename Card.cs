@@ -4,9 +4,9 @@ namespace TexasHoldEm
 {
     class Card
     {
-        public string suit { get; set; }
-        public string rank { get; set; }
-        private enum values
+        public string Suit { get; set; }
+        public string Rank { get; set; }
+        private enum Values
         {
             Two = 2, Three, Four, Five, Six,
             Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
@@ -15,17 +15,17 @@ namespace TexasHoldEm
 
         public Card(string suit, string rank)
         {
-            this.suit = suit;
-            this.rank = rank; //Make sure this field is capitilized
+            this.Suit = suit;
+            this.Rank = rank; //Make sure this field is capitilized
         }
 
         //Using the enum types to give us the card value
         public int getRankValue()
         {
-            values valRank;
-            if (Enum.TryParse(rank, out valRank))
+            Values valRank;
+            if (Enum.TryParse(Rank, out valRank))
             {
-                if (Enum.IsDefined(typeof(values), valRank))
+                if (Enum.IsDefined(typeof(Values), valRank))
                 {
                     int retString = Int32.Parse(valRank.ToString());
                     return retString;
@@ -35,7 +35,7 @@ namespace TexasHoldEm
         }
         public override string ToString()
         {
-            return "[" + rank + " of " + suit + "]";
+            return "[" + Rank + " of " + Suit + "]";
         }
 
 
