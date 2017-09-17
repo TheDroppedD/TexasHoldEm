@@ -21,7 +21,7 @@ namespace TexasHoldEm
         //public String[] value_str = {"","Straight Flush","Four of a Kind","Full House","Flush","Straight","Three of a Kind","Two Pair","One Pair","High Card"}
 
         enum legitSuits 
-        {
+        {//Not sure what this is used for
             Club=0x8000,Diamond=0x4000, Heart =  0x2000, Spade  = 0x1000
         }
 
@@ -29,6 +29,77 @@ namespace TexasHoldEm
         {
             Two = 0, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
         }
+
+    //create comparer for Hand that orders by the score, but the same hand will have multiple scores...
+    //TO TRY: creating List of Lists of Cards
+    public void findDistinctScore(List<Card> Cards) 
+    {
+        List<Hand> handCombinations = new List<Hand>();
+        int handLen = 5;
+        //There are seven Cards in Cards, and five of them will form a hand
+        //Thus, there are a total of 21 total combinations (7C5)
+        //We want extremely fast computations so no structures or objects will be used
+        for(int i = 0; i < handLen; i++) 
+        {
+            for(int j = i+1; j < handLen; j++) 
+            {
+                for(int k = j+1; k < handLen; k++) 
+                {
+                    for(int p = k+1; p < handLen; p++) 
+                    {
+                        for(int o = p + 1; o < handLen; o++) 
+                        {//add cards to handCombinations
+                            Hand handCombo = new Hand();
+                            handCombo.add(Cards[i]);
+                            handCombo.add(Cards[j]);
+                            handCombo.add(Cards[k]);
+                            handCombo.add(Cards[p]);
+                            handCombo.add(Cards[o]);
+                            handCombinations.Add(handCombo);
+                        }
+
+                    }
+                }
+            }
+        }
+        Console.WriteLine(handCombinations.Count()); //Should be 21
+        //Next, iterate through list, calling 'makeDistinctScore' for each element of the list
+        foreach(Hand h in handCombinations) {
+            uint score = makeDistinctScore(h.getCards());
+            h.setDistinctScore(score);
+        }
+        
+        //At this point, all Hands in the list have a distinct score
+    }
+
+
+    
+    public uint makeDistinctScore( List<Card> cards) 
+    {//21 Jumps
+        //TODO Make Better
+        int arraySize = cards.Count;
+        uint[] num = new uint[arraySize];
+        int counter = 0;
+        foreach(Card c in cards) 
+        {
+            num[counter] = find_fast((uint)c.getRankValue());
+            counter++;
+        }
+        uint c1 = num[0];
+        uint c2 = num[1];
+        uint c3 = num[2];
+        uint c4 = num[3];
+        uint c5 = num[4];
+        uint retUInt = eval_5hand_fast(c1,c2,c3,c4,c5);
+        return retUInt;
+    }
+
+    public int enumPrint(string s) 
+    { //Auxilary function for hand_rank
+        legitHands retEnum;
+        Enum.TryParse(s, out retEnum);
+        return Int32.Parse(retEnum.ToString());
+    }
 
     int hand_rank( uint val ) 
     {
@@ -70,33 +141,6 @@ namespace TexasHoldEm
     }   
                        
 }//Done
-
-    public uint makeDistinctScore( List<Card> cards) 
-    {//21 Jumps
-        //TODO Make Better
-        int arraySize = cards.Count;
-        uint[] num = new uint[arraySize];
-        int counter = 0;
-        foreach(Card c in cards) 
-        {
-            num[counter] = find_fast((uint)c.getRankValue());
-            counter++;
-        }
-        uint c1 = num[0];
-        uint c2 = num[1];
-        uint c3 = num[2];
-        uint c4 = num[3];
-        uint c5 = num[4];
-        uint retUInt = eval_5hand_fast(c1,c2,c3,c4,c5);
-        return retUInt;
-    }
-
-    public int enumPrint(string s) 
-    { //Auxilary function for hand_rank
-        legitHands retEnum;
-        Enum.TryParse(s, out retEnum);
-        return Int32.Parse(retEnum.ToString());
-    }
   
 
 
@@ -126,7 +170,7 @@ namespace TexasHoldEm
         //
 
         public uint find_fast(uint u) 
-        {
+        {//Creates uints to populate eval_5hand_fast
                 uint a,b,r;
                 u += 0xe91aaa35; //Adds
                 u ^= u >> 16; //Bitwise Exclusive | right hand side has a 16 bit right shift
@@ -146,7 +190,7 @@ namespace TexasHoldEm
             if (Convert.ToBoolean(s = unique5[q]))                return s;          // check for straights and high card hands
             int n = Convert.ToInt32(find_fast((c1 & 0xff) * (c2 & 0xff) * (c3 & 0xff) * (c4 & 0xff) * (c5 & 0xff)));
             return hash_values[n];
-}
+        }
 
     uint[] flushes = 
     {
