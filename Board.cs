@@ -28,14 +28,18 @@ namespace TexasHoldEm{
 
     public void startGame() {
         //Deck is shuffled
+        Console.WriteLine("Shuffling Deck"); 
         aDeck.shuffleDeck();
         //Players are given cards
+        Console.WriteLine("Ante Up!"); 
         anteUp();
+        Console.WriteLine("Dealing Cards"); 
         foreach(Player p in playersInRound) {
             //add card to Player's Phand
             p.getPhand().add(aDeck.drawCard());
             p.getPhand().add(aDeck.drawCard());
         }
+        Console.WriteLine("Cards Dealt"); 
     }//done
 
     public void dealCard(int numCards){
@@ -80,9 +84,10 @@ namespace TexasHoldEm{
 
     public void anteUp() {
         //Players to bet
+        Console.WriteLine("Inside Ante Up"); 
         foreach(Player p in playersInRound) {
             //if p agrees to pay
-            if(p.anteUp()) {
+            if(p.anteU()) {
             Jackpot += p.Pay(Currentbet);
             } else {
             playersInRound.Remove(p);
@@ -92,13 +97,21 @@ namespace TexasHoldEm{
     public void playRound(){
         Console.WriteLine("Game will now start");
         startGame();
+        Console.WriteLine("Rotation Starting");
         rotation();
+        Console.WriteLine("Flop is Dealt");
         dealCard(TheFlop);
+        Console.WriteLine("Rotation Starting");
         rotation();
+        Console.WriteLine("The Run is Dealt");
         dealCard(TheRun);
+        Console.WriteLine("Rotation Starting");
         rotation();
+        Console.WriteLine("The River is Dealt");
         dealCard(TheRiver);
+        Console.WriteLine("Rotation Starting");
         rotation();
+        Console.WriteLine("Show Down starting");
         showDown(); //FIN
     }
     public void addJackpot(int money) {

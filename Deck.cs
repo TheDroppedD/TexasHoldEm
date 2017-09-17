@@ -18,13 +18,13 @@ namespace TexasHoldEm
 
 
         public Deck()
-        {
+        { 
+            Console.WriteLine("Making Deck"); 
             foreach (string Suit in Suits)
             {
                 foreach (string Cardrank in Cardranks)
                 {
                     Card c1 = new Card(Suit, Cardrank);
-                    //Console.WriteLine(c1.ToString()); //For testing
                     Thedeck.Add(c1);
                 }
             }
