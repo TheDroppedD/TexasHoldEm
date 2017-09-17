@@ -5,14 +5,16 @@ namespace TexasHoldEm
 
 {
     class Player{
-        private Hand Phand;
-        private readonly int Chips = 500;
-        Boolean isPlaying = true;
-        private int AmountPaid;
+        private Hand Phand{ get; set; }
+        private int Chips{ get; set; }
+        Boolean isPlaying{ get; set; }
+        private int AmountPaid{ get; set; }
 
 
         Player(){
             Phand = new Hand();
+            Chips = 500;
+            isPlaying = false;
         }
 
         public Hand getPhand() {
