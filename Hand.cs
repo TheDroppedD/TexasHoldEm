@@ -5,7 +5,7 @@ namespace TexasHoldEm
 {
     class Hand: IComparer<Card> {
         private List<Card> cards{ get; set; }
-        private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" }
+        private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
         private uint distinctscore = 0; //score of the Hand by running it through the PokerAlg
         public Hand(){
             cards = new List<Card>();
