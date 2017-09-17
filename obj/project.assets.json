@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
+      "projectUniqueName": "c:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
       "projectName": "TexasHoldEm",
-      "projectPath": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
+      "projectPath": "c:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\TexasHoldEm.csproj",
       "packagesPath": "C:\\Users\\Jeremy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\obj\\",
+      "outputPath": "c:\\Users\\Jeremy\\Documents\\GitHub\\TexasHoldEm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
