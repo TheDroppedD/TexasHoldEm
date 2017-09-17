@@ -6,7 +6,7 @@ namespace TexasHoldEm
 {
     class Player{
         private Hand Phand;
-        private readonly int Chips = 500;
+        private int Chips = 500;
         Boolean isPlaying = true;
         private int AmountPaid;
 
@@ -25,6 +25,10 @@ namespace TexasHoldEm
 
         public int getChips() {
             return Chips;
+        }
+        
+        public void setChips(int Chips) {
+            this.Chips += Chips;
         }
 
 
