@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TexasHoldEm{
    
-   class Board{
+   class Board : IComparer<Player>{
     private Deck aDeck;
     private Hand Commcards;
     private List<Player> Players;
@@ -40,7 +40,11 @@ namespace TexasHoldEm{
 
     public void dealCard(int numCards){
        for(int i = 0; i < numCards; i++){
-           Commcards.add(aDeck.drawCard());
+           Card c = aDeck.drawCard();
+           Commcards.add(c);
+           foreach(Player p in playersInRound) {
+               p.getPhand().add(c);
+           }
        }
     }
 
@@ -86,6 +90,7 @@ namespace TexasHoldEm{
     }
 }//done
     public void playRound(){
+        Console.WriteLine("Game will now start");
         startGame();
         rotation();
         dealCard(TheFlop);
@@ -93,6 +98,8 @@ namespace TexasHoldEm{
         dealCard(TheRun);
         rotation();
         dealCard(TheRiver);
+        rotation();
+        showDown(); //FIN
     }
     public void addJackpot(int money) {
         Jackpot += money;
@@ -102,10 +109,20 @@ namespace TexasHoldEm{
         Currentbet += money;
     }
     public void showDown(){
-        foreach(Player p in playersInRound){
-            
-        }
+        playersInRound.Sort(Compare); //sorts players by hands
     }
+
+    
+         public int Compare(Player x, Player y) { //Compare Distinct Score
+            if(x.getPhand().getDistinctScore() > y.getPhand().getDistinctScore()) {
+                return -1;
+            } else if(x.getPhand().getDistinctScore() < y.getPhand().getDistinctScore()) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }//Done
+
 
    }//Board
 }//Texasholdem

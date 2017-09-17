@@ -3,19 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 namespace TexasHoldEm {
     class PokerDriver {
-        Hand Commcards;
-        List<Player> Players;
-        int Moneypot;
-        int Currentbet;
-        int Numrounds;
-        List<Player> playersInRound;
-
-        public void roundStart(){
-            
-        }
 
         static void Main(string[] args) {
-            Console.WriteLine("This is WORKING!");
+            Console.WriteLine("Let's play a game of Poker!");
             Board game = new Board();
             game.playRound();
         } //rotation is repeated until people stop betting
