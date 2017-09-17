@@ -5,20 +5,14 @@ namespace TexasHoldEm
 
 {
     class Player{
-<<<<<<< HEAD
         private Hand Phand;
-        private int Chips = 500;
-        Boolean isPlaying = true;
+        private int Chips;
+        public Boolean isPlaying;
         private int AmountPaid;
-=======
-        private Hand Phand{ get; set; }
-        private int Chips{ get; set; }
-        Boolean isPlaying{ get; set; }
-        private int AmountPaid{ get; set; }
->>>>>>> a02685c54d1d47bb850afbac5484ad1208e2a994
+        public Boolean isHuman = true;
 
 
-        Player(){
+        public Player(){
             Phand = new Hand();
             Chips = 500;
             isPlaying = false;
@@ -26,6 +20,10 @@ namespace TexasHoldEm
 
         public Hand getPhand() {
             return Phand;
+        }
+
+        public void setPhand(Hand h) {
+            Phand = h;
         }
 
         public int getAmountPaid() {
@@ -41,9 +39,10 @@ namespace TexasHoldEm
         }
 
 
+
         public Boolean anteU() {
             //Timer, lights here
-            Console.WriteLine("Inside Ante U"); 
+            //Console.WriteLine("Inside Ante U"); 
             Console.WriteLine("What is your move?");
             Console.WriteLine("ENTER 1 to Ante, ENTER 2 to Fold");
             string inp = Console.ReadLine();
@@ -57,6 +56,7 @@ namespace TexasHoldEm
         
         public int playerTurn(Boolean inBet){
             //Timer, lights here
+            if(isHuman) {
             Console.WriteLine("What is your move?");
             Console.WriteLine("ENTER 1 for Raise, ENTER 2 for Fold, ENTER 3 for Call, ENTER 4 for Check ");
             string inp = Console.ReadLine();
@@ -74,6 +74,7 @@ namespace TexasHoldEm
                 }
                     return 4;
 
+            }
             }
             return 98; //error code
         }

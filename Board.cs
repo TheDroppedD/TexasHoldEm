@@ -4,13 +4,14 @@ using System.Collections.Generic;
 namespace TexasHoldEm{
    
    class Board : IComparer<Player>{
-    private Deck aDeck { get; }
-    private Hand Commcards{ get; set; }
-    private List<Player> Players{ get; set; }
-    private int Jackpot{ get; set; }
-    private int Currentbet{ get; set; }
+    private Deck aDeck;
+    private Hand Commcards;
+    private List<Player> Players;
+    public int playerSize = 4;
+    private int Jackpot;
+    private int Currentbet;
     //private int Numrounds;
-    private List<Player> playersInRound{ get; set; }
+    private List<Player> playersInRound;
     public Boolean inBet = false;
     private readonly int TheFlop = 3;
     private readonly int TheRun = 1;
@@ -19,27 +20,74 @@ namespace TexasHoldEm{
     public Board() {
         aDeck = new Deck();
         Commcards = new Hand(); //empty hand
-        Players = new List<Player>(4); //4 players including user
+        Players = new List<Player>(playerSize); //4 players including user
+        playersInRound = new List<Player>(playerSize);
+        for(int i = 0; i < playerSize; i++) {
+            Player p = new Player();
+            Players.add(p);
+            playersInRound.add(p);
+        }
         Jackpot = 0; 
         Currentbet = 5; 
         //this.Numrounds = Numrounds;
-        playersInRound = Players;
     }
+
+    public Deck getDeck() {
+        return aDeck;
+    }
+
+    public void setDeck(Deck d) {
+        aDeck = d;
+    }
+
+    public Hand getCommcards() {
+        return Commcards;
+    }
+    public void setCommcards(Hand h) {
+        Commcards = h;
+    }
+
+    public List<Player> getPlayers() {
+        return Players;
+    }
+
+    public void setJackpot(int n) {
+        Jackpot = n;
+    }
+
+    public int getJackpot() {
+        return Jackpot;
+    }
+
+    public void setCurrentbet(int n) {
+        Currentbet = n;
+    }
+
+    public int getCurrentbet() {
+        return Currentbet;
+    }
+
+
+
 
     public void startGame() {
         //Deck is shuffled
         Console.WriteLine("Shuffling Deck"); 
+        Console.ReadLine();
         aDeck.shuffleDeck();
         //Players are given cards
         Console.WriteLine("Ante Up!"); 
         anteUp();
         Console.WriteLine("Dealing Cards"); 
+        Console.ReadLine();
         foreach(Player p in playersInRound) {
             //add card to Player's Phand
             p.getPhand().add(aDeck.drawCard());
             p.getPhand().add(aDeck.drawCard());
         }
+        //playersInRound[0].isHuman = true;
         Console.WriteLine("Cards Dealt"); 
+        Console.ReadLine();
     }//done
 
     public void dealCard(int numCards){
@@ -55,6 +103,7 @@ namespace TexasHoldEm{
 
     public void rotation() {
         int count = 0; //Number of turns made
+        //Console.WriteLine(playersInRound.Count);
         while(count != playersInRound.Count){
             foreach(Player p in playersInRound) {
             //exception where if player raises, re do rotation()
@@ -85,7 +134,8 @@ namespace TexasHoldEm{
 
     public void anteUp() {
         //Players to bet
-        Console.WriteLine("Inside Ante Up"); 
+        Console.WriteLine("Press Enter to Pay the Ante");
+        string s = Console.ReadLine(); 
         foreach(Player p in playersInRound) {
             //if p agrees to pay
             Boolean booling = p.anteU();
@@ -100,20 +150,28 @@ namespace TexasHoldEm{
         Console.WriteLine("Game will now start");
         startGame();
         Console.WriteLine("Rotation Starting");
+        Console.ReadLine();
         rotation();
         Console.WriteLine("Flop is Dealt");
+        Console.ReadLine();
         dealCard(TheFlop);
         Console.WriteLine("Rotation Starting");
+        Console.ReadLine();
         rotation();
         Console.WriteLine("The Run is Dealt");
+        Console.ReadLine();
         dealCard(TheRun);
         Console.WriteLine("Rotation Starting");
+        Console.ReadLine();
         rotation();
         Console.WriteLine("The River is Dealt");
+        Console.ReadLine();
         dealCard(TheRiver);
         Console.WriteLine("Rotation Starting");
+        Console.ReadLine();
         rotation();
         Console.WriteLine("Show Down starting");
+        Console.ReadLine();
         showDown(); //FIN
     }
     public void addJackpot(int money) {

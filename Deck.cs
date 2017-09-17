@@ -4,7 +4,7 @@ namespace TexasHoldEm
 {
     class Deck : IComparer<Card>
     {
-        private readonly int Decksize = 52;
+        //private readonly int Decksize = 52;
         private List<Card> theDeck = new List<Card>();
 
         /*private enum values {Two = 2, Three, Four, Five, Six,
@@ -19,7 +19,7 @@ namespace TexasHoldEm
 
         public Deck()
         { 
-            Console.WriteLine("Making Deck"); 
+            //Console.WriteLine("Making Deck"); 
             foreach (string Suit in Suits)
             {
                 foreach (string Cardrank in Cardranks)
