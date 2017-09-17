@@ -23,24 +23,6 @@ namespace TexasHoldEm
             return AmountPaid;
         }
 
-        public void bigBlindTurn() {
-            //Timer, lights here
-            Console.WriteLine("What is your move?");
-            Console.WriteLine("ENTER 1 to Raise, ENTER 2 to Fold, ENTER 3 to Call ");
-            string inp = Console.ReadLine();
-            switch(inp){
-                case "1":
-                    Raise();
-                    break;
-                case "2":
-                    Fold();
-                    break;
-                case "3":
-                    Call();
-                    break;
-
-            }
-        }
 
         public Boolean anteUp() {
             //Timer, lights here
@@ -83,7 +65,7 @@ namespace TexasHoldEm
             isPlaying  = false;
 
         }
-        public void Check(){
+        public void Call(){
 
 
         }
@@ -112,5 +94,25 @@ namespace TexasHoldEm
         }
 
 
+        /* 
+        public void bigBlindTurn() {
+            //Timer, lights here
+            Console.WriteLine("What is your move?");
+            Console.WriteLine("ENTER 1 to Raise, ENTER 2 to Fold, ENTER 3 to Call ");
+            string inp = Console.ReadLine();
+            switch(inp){
+                case "1":
+                    Raise();
+                    break;
+                case "2":
+                    Fold();
+                    break;
+                case "3":
+                    Call();
+                    break;
+
+            }
+        }
+*/
     }
 }
