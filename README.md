@@ -4,15 +4,14 @@ This is a Project developed by **Alvie Hossain and Jeremy Gouveia**.
 
 **Let's get started:**
 
-# But First, the Algorithm
-  It took us around 12-15 hours to have all of our Classes created 
-
+## But First, the Algorithm
+  It took us around 7 of straight work and lots of googling to structure our program. Unfortunately, we saved the worst part for last. The thing is, in Poker there are approximately 2,598,960 possible **unique** poker hands. With this in mind, we ended up with three possibilities: either create an object-oriented solution that would run through all the possible options, or import a library that someone else had already developed, OR take a nice and healthy "*hackathon* Paul from Siemens, and Mike from Booz Allen Hamilton
 ## Getting Started
-  These instructions will get you up and running with a local copy of our sweet poker game.
+  These instructions will get you up and running with a local copy of our sweet poker game. 
 ### Prerequisites
   As long as you have an IDE that can run .NET applications or C#, you will be able to access our executable. 
   ``` We used Visual Studio code with the C# extension powered by OmniSharp which was kindly provided by Microsoft```
-Making first C# file:
+Making first C# file: 
 
 
 
@@ -25,3 +24,4 @@ Making first C# file:
 [Basic C# Tutorial](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code)
 [Tutorial's Point Tutorial](https://www.tutorialspoint.com/csharp/csharp_program_structure.htm)
 
+-087 
