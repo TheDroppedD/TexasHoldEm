@@ -65,11 +65,7 @@ namespace TexasHoldEm
             isPlaying  = false;
 
         }
-        public void Call(){
-
-
-        }
-
+      
         
         public int Raise(){ //No payment
             Console.WriteLine("What is your move?");
