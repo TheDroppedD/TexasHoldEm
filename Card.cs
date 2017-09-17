@@ -4,8 +4,8 @@ namespace TexasHoldEm
 {
     class Card
     {
-        public string Suit { get; set; }
-        public string Rank {get ; set;}
+        public string Suit { get {return Suit;} set {Suit=value}};
+        public string Rank { get {return Rank;} set {Rank=value}};
         /* 
         private int _pSuit ;
         public string pSuit {
