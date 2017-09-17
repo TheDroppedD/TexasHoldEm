@@ -1,14 +1,18 @@
 using System;
 using System.Collections.Generic;
-namespace TexasHoldEm {
+namespace TexasHoldEm
+ {
 
-    class PokerAlg {
+    class PokerAlg 
+    {
 
-        public PokerAlg() {
+        public PokerAlg() 
+        {
 
         }
         //We want send in all hands
-        enum legitHands {
+        enum legitHands 
+        {
             Straight_Flush = 1, Four_of_a_Kind, Full_House, Flush, Straight, Three_of_a_Kind, Two_Pair, One_Pair, High_Card
         }//In Use
         
@@ -16,31 +20,40 @@ namespace TexasHoldEm {
         // define RANK(x) ((x >> 8) & 0xF)
         //public String[] value_str = {"","Straight Flush","Four of a Kind","Full House","Flush","Straight","Three of a Kind","Two Pair","One Pair","High Card"}
 
-        enum legitSuits {
+        enum legitSuits 
+        {
             CLUB=0x8000,DIAMOND=0x4000, HEART =  0x2000, SPADE  = 0x1000
         }
 
-        enum legitRanks {
+        enum legitRanks 
+        {
             Two = 0, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
         }
 
-    int hand_rank( uint val ) {
-    if (val > 6185) {
+    int hand_rank( uint val ) 
+    {
+    if (val > 6185) 
+    {
         return enumPrint("High_Card");
     }        // 1277 high card
-    if (val > 3325) {
+    if (val > 3325) 
+    {
         return enumPrint("One_Pair");
     }         // 2860 one pair 
-    if (val > 2467) {
+    if (val > 2467) 
+    {
         return enumPrint("Two_Pair");
     }      //  858 two pair
-    if (val > 1609) {
+    if (val > 1609) 
+    {
         return enumPrint("Three_of_a_Kind");
     }  //  858 three-kind
-    if (val > 1599) {
+    if (val > 1599) 
+    {
         return enumPrint("Straight");
     }         //   10 straights
-    if (val > 322)  {
+    if (val > 322)  
+    {
         return enumPrint("Flush");
     }           // 1277 flushes
     if (val > 166)  return enumPrint("Full_House");      //  156 full house
@@ -48,12 +61,14 @@ namespace TexasHoldEm {
     return enumPrint("Straight_Flush");                   //   10 straight-flushes
 }//Done
 
-    public uint makeDistinctScore( List<Card> cards) {
+    public uint makeDistinctScore( List<Card> cards) 
+    {
         //TODO Make Better
         int arraySize = cards.Count;
         uint[] num = new uint[arraySize];
         int counter = 0;
-        foreach(Card c in cards) {
+        foreach(Card c in cards) 
+        {
             num[counter] = find_fast((uint)c.getRankValue());
             counter++;
         }
@@ -66,7 +81,8 @@ namespace TexasHoldEm {
         return retUInt;
     }
 
-    public int enumPrint(string s) { //Auxilary function for hand_rank
+    public int enumPrint(string s) 
+    { //Auxilary function for hand_rank
         legitHands retEnum;
         Enum.TryParse(s, out retEnum);
         return Int32.Parse(retEnum.ToString());
@@ -99,7 +115,8 @@ namespace TexasHoldEm {
         //   b = bit turned on depending on rank of card
         //
 
-        public uint find_fast(uint u) {
+        public uint find_fast(uint u) 
+        {
                 uint a,b,r;
                 u += 0xe91aaa35; //Adds
                 u ^= u >> 16; //Bitwise Exclusive | right hand side has a 16 bit right shift
@@ -111,7 +128,8 @@ namespace TexasHoldEm {
                 return r;
         }
 
-        uint eval_5hand_fast(uint c1, uint c2, uint c3, uint c4, uint c5) {
+        uint eval_5hand_fast(uint c1, uint c2, uint c3, uint c4, uint c5) 
+        {
             int q = (int)((c1 | c2 | c3 | c4 | c5) >> 16);
             uint s;
             if ((Convert.ToBoolean(c1 & c2 & c3 & c4 & c5 & 0xf000))) return flushes[q]; // check for flushes and straight flushes
@@ -120,7 +138,8 @@ namespace TexasHoldEm {
             return hash_values[n];
 }
 
-    uint[] flushes = {
+    uint[] flushes = 
+    {
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 1599, 0, 0, 0, 0, 0, 0, 0, 1598, 0, 0, 0, 1597, 0, 1596,
@@ -544,7 +563,8 @@ namespace TexasHoldEm {
 ** of five unique ranks (i.e.  either Straights or High Card
 ** hands).  it's similar to the above "flushes" array.
 */
-uint[] unique5 = {
+uint[] unique5 = 
+{
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0, 1608, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 7462, 0, 0, 0, 0, 0, 0, 0, 7461, 0, 0,  0,  7460,  0,
@@ -968,7 +988,8 @@ uint[] unique5 = {
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 1600
 };
-        uint[] hash_adjust = {
+        uint[] hash_adjust = 
+        {
     0, 5628, 7017, 1298, 2918, 2442, 8070, 6383, 6383, 7425, 2442, 5628, 8044, 7425, 3155, 6383, 
     2918, 7452, 1533, 6849, 5586, 7452, 7452, 1533, 2209, 6029, 2794, 3509, 7992, 7733, 7452, 131, 
     6029, 4491, 1814, 7452, 6110, 3155, 7077, 6675, 532, 1334, 7555, 5325, 3056, 1403, 1403, 3969, 

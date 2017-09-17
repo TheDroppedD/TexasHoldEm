@@ -4,7 +4,8 @@ using System.Timers;
 namespace TexasHoldEm
 
 {
-    class Player{
+    class Player
+    {
         private Hand Phand;
         private int Chips;
         public Boolean isPlaying;
@@ -12,55 +13,75 @@ namespace TexasHoldEm
         public Boolean isHuman = true;
 
 
-        public Player(){
+        public Player()
+        {
             Phand = new Hand();
             Chips = 500;
             isPlaying = false;
         }
 
-        public Hand getPhand() {
+        public Hand getPhand() 
+        {
             return Phand;
         }
 
-        public void setPhand(Hand h) {
+        public void setPhand(Hand h) 
+        {
             Phand = h;
         }
 
-        public int getAmountPaid() {
+        public int getAmountPaid() 
+        {
             return AmountPaid;
         }
 
-        public int getChips() {
+        public int getChips() 
+        {
             return Chips;
         }
         
-        public void setChips(int Chips) {
+        public void setChips(int Chips) 
+        {
             this.Chips += Chips;
+        }
+
+        public override string ToString() {
+            return "Chips: " + Chips + ", Hand: " + this.getPhand().ToString();
         }
 
 
 
-        public Boolean anteU() {
+        public Boolean anteU() 
+        {
             //Timer, lights here
             //Console.WriteLine("Inside Ante U"); 
             Console.WriteLine("What is your move?");
             Console.WriteLine("ENTER 1 to Ante, ENTER 2 to Fold");
             string inp = Console.ReadLine();
-            if(inp == "1") {
+            Console.WriteLine("Current Chips: " + Chips);
+            switch(inp)
+            {
+                case "1":
                     return true;
-                }else{
+                    break;
+                case "2":
                     isPlaying = false;
                     return false;
-                }
+                default: 
+                    Console.WriteLine("Invalid Input, please try again");
+                    return anteU(); //runs recursively if input is invalid
             }
+            }//Done
         
-        public int playerTurn(Boolean inBet){
+        public int playerTurn(Boolean inBet)
+        {
             //Timer, lights here
-            if(isHuman) {
+            Console.WriteLine("You have: " + this.ToString());
             Console.WriteLine("What is your move?");
             Console.WriteLine("ENTER 1 for Raise, ENTER 2 for Fold, ENTER 3 for Call, ENTER 4 for Check ");
             string inp = Console.ReadLine();
-            switch(inp){
+            switch(inp)
+            {
                 case "1":
                     return 1;
                 case "2":
@@ -68,66 +89,56 @@ namespace TexasHoldEm
                 case "3":
                     return 3;
                 case "4":
-                if(inBet){
+                if(inBet)
+                {
                     Console.WriteLine("You can't check! You must call, fold or raise");
+                    
                     return playerTurn(inBet);
-                }
+                } 
+                else 
+                {
                     return 4;
-
+                }
+                break;
+                default:
+                    Console.WriteLine("That's not valid input");
+                    return playerTurn(inBet);
+                    break;
             }
-            }
-            return 98; //error code
-        }
+        }//Done
 
-        public void Fold(){
+        public void Fold()
+        { //not sure if necessary
             //player can no longer move
             isPlaying  = false;
 
-        }
+        }//Done
       
         
-        public int Raise(){ //No payment
+        public int Raise()
+        { //No payment in this function directly?
             Console.WriteLine("What is your move?");
             Console.WriteLine("Enter amount to raise:");
             string inp = Console.ReadLine();
             int amount = Int32.Parse(inp);
 
-            if(amount > Chips) {
+            if(amount > Chips) 
+            {
                 Console.WriteLine("Sorry, you're broke");
-                Raise();
-                return 97; //error code
-            } else {
+                return Raise();
+            } 
+            else 
+            {
                 return amount;
             }
-        }//done
+        }//Done
 
         
-        public int Pay(int amount){
+        public int Pay(int amount)
+        {
             Chips -= amount;
             AmountPaid += amount;
             return amount;
-        }
-
-
-        /* 
-        public void bigBlindTurn() {
-            //Timer, lights here
-            Console.WriteLine("What is your move?");
-            Console.WriteLine("ENTER 1 to Raise, ENTER 2 to Fold, ENTER 3 to Call ");
-            string inp = Console.ReadLine();
-            switch(inp){
-                case "1":
-                    Raise();
-                    break;
-                case "2":
-                    Fold();
-                    break;
-                case "3":
-                    Call();
-                    break;
-
-            }
-        }
-*/
+        }//Done
     }
 }
