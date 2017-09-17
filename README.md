@@ -2,7 +2,7 @@
 This being the first official MLH Hackathon attended by us, Alvie and I decided to spend all of our time learning something new. We spent a great deal of time wondering what to make until I remembered about the deck of cards the recruiters from SIG had given me. Seeing as how they use a lot of C#, we took this as a great opportunity to learn C# as well as make something that SIG really loves: **Poker**.
 This is a Project developed by **Alvie Hossain and Jeremy Gouveia**.
 
-**Let's get started**
+**Let's get started,**
 
 # But First, the Algorithm
 
