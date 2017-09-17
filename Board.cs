@@ -17,7 +17,7 @@ namespace TexasHoldEm{
     private readonly int TheRiver = 1; 
 
     public Board() {
-        Deck aDeck = new Deck();
+        aDeck = new Deck();
         Commcards = new Hand(); //empty hand
         Players = new List<Player>(4); //4 players including user
         Jackpot = 0; 
