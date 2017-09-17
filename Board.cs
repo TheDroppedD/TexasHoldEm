@@ -4,17 +4,17 @@ using System.Collections.Generic;
 namespace TexasHoldEm{
    
    class Board : IComparer<Player>{
-    public Deck aDeck;
-    private Hand Commcards;
-    private List<Player> Players;
-    private int Jackpot;
-    private int Currentbet;
+    private Deck aDeck { get; }
+    private Hand Commcards{ get; set; }
+    private List<Player> Players{ get; set; }
+    private int Jackpot{ get; set; }
+    private int Currentbet{ get; set; }
     //private int Numrounds;
-    private List<Player> playersInRound;
-    private Boolean inBet = false;
+    private List<Player> playersInRound{ get; set; }
+    public Boolean inBet = false;
     private readonly int TheFlop = 3;
     private readonly int TheRun = 1;
-    private readonly int TheRiver = 1; 
+    private readonly int TheRiver = 1;
 
     public Board() {
         aDeck = new Deck();
