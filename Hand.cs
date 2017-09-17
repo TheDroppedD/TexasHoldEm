@@ -5,10 +5,8 @@ namespace TexasHoldEm
 {
     class Hand: IComparer<Card> {
         private List<Card> cards;
-        private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
-        private uint distinctscore; //score of the Hand by running it through the PokerAlg
+        private List<string> suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
         public Hand(){
-            cards = new List<Card>();
         }
 
         public void add(Card focusCard){
@@ -28,10 +26,9 @@ namespace TexasHoldEm
                 return 0;
             }
         }
+    }
+}
 
-        public List<Card> getCards() {
-            return cards;
-        }
         /*public int suitEqual(){
             int spadeCount = 0;
             int heartCount = 0;
@@ -40,7 +37,7 @@ namespace TexasHoldEm
             
             foreach(Card c1 in cards){
                 for(int i = 0; i < 4; i++){
-                    if (c1.Suit == Suits[i]){
+                    if (c1.suit == suits[i]){
                         if (i == 1){
                             spadeCount++;
                         }
@@ -57,30 +54,10 @@ namespace TexasHoldEm
                             return 98;
                         }
                     }
+                    else{}
                 }
             }
-            return 0;
         }
-        */
-        public void sortHand() {
-            cards.Sort(Compare);
-            foreach(Card c in cards) {
-                Console.WriteLine(c);
-            }
-        }
-
-        public void setDistinctScore() {
-            PokerAlg pAlg = new PokerAlg();
-            uint x = pAlg.makeDistinctScore(cards);
-        }
-         public uint getDistinctScore() {
-             return distinctscore;
-         }
-      /*   public boolean isRoyalFlush(){
-            int count = 0;
-            foreach(Card c1 in cards){
-                if (c1.}
-        } */
-    
     }
 }
+
