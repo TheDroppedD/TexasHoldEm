@@ -26,6 +26,7 @@ namespace TexasHoldEm
 
         public Boolean anteU() {
             //Timer, lights here
+            Console.WriteLine("Inside Ante U"); 
             Console.WriteLine("What is your move?");
             Console.WriteLine("ENTER 1 to Ante, ENTER 2 to Fold");
             string inp = Console.ReadLine();

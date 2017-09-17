@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace TexasHoldEm{
    
    class Board : IComparer<Player>{
-    private Deck aDeck;
+    public Deck aDeck;
     private Hand Commcards;
     private List<Player> Players;
     private int Jackpot;
@@ -43,6 +43,7 @@ namespace TexasHoldEm{
     }//done
 
     public void dealCard(int numCards){
+        Console.WriteLine("DEAL CARD"); 
        for(int i = 0; i < numCards; i++){
            Card c = aDeck.drawCard();
            Commcards.add(c);
@@ -87,7 +88,8 @@ namespace TexasHoldEm{
         Console.WriteLine("Inside Ante Up"); 
         foreach(Player p in playersInRound) {
             //if p agrees to pay
-            if(p.anteU()) {
+            Boolean booling = p.anteU();
+            if(booling) {
             Jackpot += p.Pay(Currentbet);
             } else {
             playersInRound.Remove(p);

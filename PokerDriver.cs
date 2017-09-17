@@ -8,6 +8,7 @@ namespace TexasHoldEm {
             Console.WriteLine("Let's play a game of Poker!");
             Board game = new Board();
             game.playRound();
+            Console.WriteLine(game.aDeck.getDeck());
         } //rotation is repeated until people stop betting
     }
 }

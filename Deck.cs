@@ -5,7 +5,7 @@ namespace TexasHoldEm
     class Deck : IComparer<Card>
     {
         private readonly int Decksize = 52;
-        private List<Card> Thedeck = new List<Card>();
+        private List<Card> theDeck = new List<Card>();
 
         /*private enum values {Two = 2, Three, Four, Five, Six,
         Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
@@ -25,16 +25,20 @@ namespace TexasHoldEm
                 foreach (string Cardrank in Cardranks)
                 {
                     Card c1 = new Card(Suit, Cardrank);
-                    Thedeck.Add(c1);
+                    theDeck.Add(c1);
                 }
             }
+        }
+
+        public List<Card> getDeck() {
+            return theDeck;
         }
 
 
         public Card drawCard()
         {
-            Card c1 = Thedeck[0];
-            Thedeck.RemoveAt(0);
+            Card c1 = theDeck[0];
+            theDeck.RemoveAt(0);
             //Console.WriteLine(c1.ToString()); //For testing
             return c1;
         }
@@ -54,8 +58,8 @@ namespace TexasHoldEm
 
         public void shuffleDeck()
         {//asdasd
-            Thedeck.Sort(Compare);
-            Thedeck.Sort(Compare);
+            theDeck.Sort(Compare);
+            theDeck.Sort(Compare);
         }
         
     }//Deck
