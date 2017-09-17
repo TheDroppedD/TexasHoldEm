@@ -56,6 +56,28 @@ namespace TexasHoldEm {
         //Function exists to put uint u in a structure the matches the algorithm
         //in 32 bits, after find_fast(), 
         // u = xxxbbbbb bbbbbbbb cdhsrrrr xxpppppp 
+
+        
+        //   This routine initializes the deck.  A deck of cards is
+        //   simply an integer array of length 52 (no jokers).  This
+        //   array is populated with each card, using the following
+        //   scheme:
+        //
+        //   An integer is made up of four bytes.  The high-order
+        //   bytes are used to hold the rank bit pattern, whereas
+        //   the low-order bytes hold the suit/rank/prime value
+        //   of the card.
+        //
+        //   +--------+--------+--------+--------+
+        //   |xxxbbbbb|bbbbbbbb|cdhsrrrr|xxpppppp|
+        //   +--------+--------+--------+--------+
+        //
+        //   p = prime number of rank (deuce=2,trey=3,four=5,five=7,...,ace=41)
+        //   r = rank of card (deuce=0,trey=1,four=2,five=3,...,ace=12)
+        //   cdhs = suit of card
+        //   b = bit turned on depending on rank of card
+        //
+
         public uint find_fast(uint u) {
                 uint a,b,r;
                 u += 0xe91aaa35; //Adds
