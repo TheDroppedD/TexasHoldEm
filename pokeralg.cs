@@ -72,7 +72,7 @@ namespace TexasHoldEm
 }//Done
 
     public uint makeDistinctScore( List<Card> cards) 
-    {
+    {//21 Jumps
         //TODO Make Better
         int arraySize = cards.Count;
         uint[] num = new uint[arraySize];
