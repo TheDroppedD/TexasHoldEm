@@ -22,7 +22,7 @@ namespace TexasHoldEm
 
         enum legitSuits 
         {
-            CLUB=0x8000,DIAMOND=0x4000, HEART =  0x2000, SPADE  = 0x1000
+            Club=0x8000,Diamond=0x4000, Heart =  0x2000, Spade  = 0x1000
         }
 
         enum legitRanks 
@@ -56,9 +56,19 @@ namespace TexasHoldEm
     {
         return enumPrint("Flush");
     }           // 1277 flushes
-    if (val > 166)  return enumPrint("Full_House");      //  156 full house
-    if (val > 10)   return enumPrint("Four_of_a_Kind");   //  156 four-kind
-    return enumPrint("Straight_Flush");                   //   10 straight-flushes
+    if (val > 166)  
+    {
+        return enumPrint("Full_House");
+    }      //  156 full house
+    if (val > 10)  
+    { 
+        return enumPrint("Four_of_a_Kind"); //  156 four-kind
+    }
+    else
+    {
+        return enumPrint("Straight_Flush");//   10 straight-flushes
+    }   
+                       
 }//Done
 
     public uint makeDistinctScore( List<Card> cards) 

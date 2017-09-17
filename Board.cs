@@ -245,7 +245,7 @@ namespace TexasHoldEm
 
     public void showDown()
     {
-        
+        PokerAlg sorter = new PokerAlg();
     }
 
    }//Board
