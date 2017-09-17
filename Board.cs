@@ -6,12 +6,12 @@ namespace TexasHoldEm{
    class Board : IComparer<Player>{
     private Deck aDeck;
     private Hand Commcards;
-    private List<Player> Players;
+    private List<Player> Players = new List<Player>();
     public int playerSize = 4;
     private int Jackpot;
     private int Currentbet;
     //private int Numrounds;
-    private List<Player> playersInRound;
+    private List<Player> playersInRound = new List<Player>();
     public Boolean inBet = false;
     private readonly int TheFlop = 3;
     private readonly int TheRun = 1;
@@ -24,8 +24,8 @@ namespace TexasHoldEm{
         playersInRound = new List<Player>(playerSize);
         for(int i = 0; i < playerSize; i++) {
             Player p = new Player();
-            Players.add(p);
-            playersInRound.add(p);
+            Players.Add(p);
+            playersInRound.Add(p);
         }
         Jackpot = 0; 
         Currentbet = 5; 
