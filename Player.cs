@@ -5,14 +5,23 @@ namespace TexasHoldEm
 
 {
     class Player{
+<<<<<<< HEAD
         private Hand Phand;
-        private readonly int Chips = 500;
+        private int Chips = 500;
         Boolean isPlaying = true;
         private int AmountPaid;
+=======
+        private Hand Phand{ get; set; }
+        private int Chips{ get; set; }
+        Boolean isPlaying{ get; set; }
+        private int AmountPaid{ get; set; }
+>>>>>>> a02685c54d1d47bb850afbac5484ad1208e2a994
 
 
         Player(){
             Phand = new Hand();
+            Chips = 500;
+            isPlaying = false;
         }
 
         public Hand getPhand() {
@@ -25,6 +34,10 @@ namespace TexasHoldEm
 
         public int getChips() {
             return Chips;
+        }
+        
+        public void setChips(int Chips) {
+            this.Chips += Chips;
         }
 
 
