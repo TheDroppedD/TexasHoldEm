@@ -115,8 +115,10 @@ namespace TexasHoldEm
         foreach(Player p in cPlayers) 
         {
             //adds two cards to Player's Phand
-            p.getPhand().add(aDeck.drawCard());
-            p.getPhand().add(aDeck.drawCard());
+            Card c1 = aDeck.drawCard();
+            Card c2 = aDeck.drawCard();
+            p.getPhand().add(c1);
+            p.getPhand().add(c2);
         }
         //Players[0].isHuman = true;
         Console.WriteLine("Cards Dealt"); 
@@ -163,6 +165,7 @@ namespace TexasHoldEm
             for(int i = currentPlayers - 1; i > -1; i--) 
             {
             //exception where if player raises, re do rotation()
+            Console.WriteLine(Commcards.ToString());
             int n = Players[i].playerTurn(inBet);
             count += 1;
             switch(n) 
@@ -201,6 +204,7 @@ namespace TexasHoldEm
             if(booling) 
             {
             Jackpot += cPlayers[i].Pay(Currentbet);
+             Console.WriteLine("Current Chips: " + cPlayers[i].getChips());
             } 
             else 
             {
@@ -241,7 +245,7 @@ namespace TexasHoldEm
 
     public void showDown()
     {
-        Players.Sort(Compare); //sorts players by hands
+        
     }
 
    }//Board

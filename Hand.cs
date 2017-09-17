@@ -43,8 +43,23 @@ namespace TexasHoldEm
             }
         }
 
+        public string seeHand() {
+            string retString = "{ ";
+            for(int i = 0; i < seen; i++)
+            {
+                retString += cards[i] + ", ";
+            }
+            retString += " }";
+            return retString;
+        }
+
         public override string ToString() {
-            return "{ " + cards.ToString() + " }";
+            string retString = "{ ";
+            foreach(Card c in cards) {
+                retString += c + ", ";
+            }
+            retString += " }";
+            return retString;
         }
 
         public void sortHand()

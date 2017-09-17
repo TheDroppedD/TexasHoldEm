@@ -46,7 +46,7 @@ namespace TexasHoldEm
         }
 
         public override string ToString() {
-            return "Chips: " + Chips + ", Hand: " + this.getPhand().ToString();
+            return "Chips: " + Chips + ", Hand: " + this.getPhand().seeHand();
         }
 
 
@@ -58,7 +58,6 @@ namespace TexasHoldEm
             Console.WriteLine("What is your move?");
             Console.WriteLine("ENTER 1 to Ante, ENTER 2 to Fold");
             string inp = Console.ReadLine();
-            Console.WriteLine("Current Chips: " + Chips);
             switch(inp)
             {
                 case "1":
@@ -78,7 +77,7 @@ namespace TexasHoldEm
             //Timer, lights here
             Console.WriteLine("You have: " + this.ToString());
             Console.WriteLine("What is your move?");
-            Console.WriteLine("ENTER 1 for Raise, ENTER 2 for Fold, ENTER 3 for Call, ENTER 4 for Check ");
+            Console.WriteLine("ENTER 1 for Raise, ENTER 2 for Fold, ENTER 3 for Call, ENTER 4 for Check");
             string inp = Console.ReadLine();
             switch(inp)
             {
