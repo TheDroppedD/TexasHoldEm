@@ -3,12 +3,12 @@ using System.Collections.Generic;
 namespace TexasHoldEm
 
 {
-    class Hand: IComparer<Card> 
+    class Hand: IComparer
     {
         private List<Card> cards = new List<Card>();
         //private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
         private uint distinctscore = 0; //score of the Hand by running it through the PokerAlg
-        private readonly int seen = 2;
+        private readonly int seen = 2; //amount of elements the player is allowed to see
         public Hand()
         {
             cards = new List<Card>();
@@ -27,6 +27,14 @@ namespace TexasHoldEm
         {
             cards.Remove(focusCard);
         }
+        public void setDistinctScore(uint score) 
+        {
+            distinctscore = score;
+        }
+         public uint getDistinctScore() 
+         {
+             return distinctscore;
+         }
         public int Compare(Card x, Card y)
         {
             if (x.getRankValue() > y.getRankValue())
@@ -41,6 +49,10 @@ namespace TexasHoldEm
             {
                 return 0;
             }
+        }
+        public int compareDScore(Hand x, Hand y)
+        {
+            if (x.getDistinctScore() )
         }
 
         public string seeHand() {
@@ -70,16 +82,6 @@ namespace TexasHoldEm
                 Console.WriteLine(c);
             }
         }
-
-        public void setDistinctScore() 
-        {
-            PokerAlg pAlg = new PokerAlg();
-            uint x = pAlg.makeDistinctScore(cards);
-        }
-         public uint getDistinctScore() 
-         {
-             return distinctscore;
-         }
     
     }
 }
