@@ -25,19 +25,23 @@ namespace TexasHoldEm
             this.Rank = rank; //Make sure this field is capitilized
         }
 
-        public void setSuit(string s) {
+        public void setSuit(string s) 
+        {
             Suit = s;
         }
 
-        public string getSuit() {
+        public string getSuit() 
+        {
             return Suit;
         }
 
-        public void setRank(string s) {
+        public void setRank(string s) 
+        {
             Rank = s;
         }
 
-        public string getRank() {
+        public string getRank() 
+        {
             return Rank;
         }
 

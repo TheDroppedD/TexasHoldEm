@@ -7,14 +7,17 @@ namespace TexasHoldEm
         //private readonly int Decksize = 52;
         private List<Card> theDeck = new List<Card>();
 
-        /*private enum values {Two = 2, Three, Four, Five, Six,
-        Seven, Eight, Nine, Ten, Jack, Queen, King, Ace}
-        */
         //TODO Figure out how to make this better
-        private List<string> Cardranks = new List<string>{"Two", "Three", "Four", "Five", "Six", "Seven",
-                                                                         "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
+        private List<string> Cardranks = new List<string>
+        {
+            "Two", "Three", "Four", "Five", "Six", "Seven",
+            "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"
+            };
 
-        private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
+        private List<string> Suits = new List<string>  //not used so far
+        { 
+            "Spades", "Hearts", "Clubs", "Diamonds" 
+        };
 
 
         public Deck()
@@ -28,11 +31,12 @@ namespace TexasHoldEm
                     theDeck.Add(c1);
                 }
             }
-        }
+        }//Done
 
-        public List<Card> getDeck() {
+        public List<Card> getDeck() 
+        {
             return theDeck;
-        }
+        }//Done
 
 
         public Card drawCard()
@@ -41,7 +45,7 @@ namespace TexasHoldEm
             theDeck.RemoveAt(0);
             //Console.WriteLine(c1.ToString()); //For testing
             return c1;
-        }
+        }//Done
         
 
         //Deck needs shuffle method
@@ -54,13 +58,15 @@ namespace TexasHoldEm
             Random rand = new Random();
             int retInt = rand.Next(-5, 5);
             return retInt;
-        }
+        }//Done
 
         public void shuffleDeck()
-        {//asdasd
+        {//TODO, replace iMAX with a non "magic number"
+            for(int i = 0; i < 10; i++) 
+            {
             theDeck.Sort(Compare);
-            theDeck.Sort(Compare);
-        }
+            }
+        }//Done
         
     }//Deck
 }//Texas Hold Em 

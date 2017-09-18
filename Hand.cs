@@ -3,84 +3,83 @@ using System.Collections.Generic;
 namespace TexasHoldEm
 
 {
-    class Hand: IComparer<Card> {
-        private List<Card> cards{ get; set; }
+    class Hand: IComparer<Card> 
+    {
+        private List<Card> cards = new List<Card>();
         //private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
         private uint distinctscore = 0; //score of the Hand by running it through the PokerAlg
-        public Hand(){
+        private readonly int seen = 2;
+        public Hand()
+        {
             cards = new List<Card>();
         }
 
-        public void add(Card focusCard){
+          public List<Card> getCards() 
+        {
+            return cards;
+        }
+
+        public void add(Card focusCard)
+        {
             cards.Add(focusCard);
         }
-        public void remove(Card focusCard){
+        public void remove(Card focusCard)
+        {
             cards.Remove(focusCard);
         }
-        public int Compare(Card x, Card y){
-            if (x.getRankValue() > y.getRankValue()){
+        public int Compare(Card x, Card y)
+        {
+            if (x.getRankValue() > y.getRankValue())
+            {
                 return 1;
             }
-            else if (x.getRankValue() < y.getRankValue()){
+            else if (x.getRankValue() < y.getRankValue())
+            {
                 return -1;
             }
-            else{
+            else
+            {
                 return 0;
             }
         }
 
-        public List<Card> getCards() {
-            return cards;
-        }
-        /*public int suitEqual(){
-            int spadeCount = 0;
-            int heartCount = 0;
-            int clubCount = 0;
-            int diamCount = 0;
-            
-            foreach(Card c1 in cards){
-                for(int i = 0; i < 4; i++){
-                    if (c1.Suit == Suits[i]){
-                        if (i == 1){
-                            spadeCount++;
-                        }
-                        else if (i == 2){
-                            heartCount++;
-                        }
-                        else if (i == 3){
-                            clubCount++;
-                        }
-                        else if (i == 4){
-                            diamCount++;
-                        }
-                        else{
-                            return 98;
-                        }
-                    }
-                }
+        public string seeHand() {
+            string retString = "{ ";
+            for(int i = 0; i < seen; i++)
+            {
+                retString += cards[i] + ", ";
             }
-            return 0;
+            retString += " }";
+            return retString;
         }
-        */
-        public void sortHand() {
-            cards.Sort(Compare);
+
+        public override string ToString() {
+            string retString = "{ ";
             foreach(Card c in cards) {
+                retString += c + ", ";
+            }
+            retString += " }";
+            return retString;
+        }
+
+        public void sortHand()
+         {
+            cards.Sort(Compare);
+            foreach(Card c in cards) 
+            {
                 Console.WriteLine(c);
             }
         }
 
-        public void setDistinctScore() {
+        public void setDistinctScore() 
+        {
             PokerAlg pAlg = new PokerAlg();
             uint x = pAlg.makeDistinctScore(cards);
         }
-         public uint getDistinctScore() {
+         public uint getDistinctScore() 
+         {
              return distinctscore;
          }
-      /*   public boolean isRoyalFlush(){
-            int count = 0;
-            foreach(Card c1 in cards){
-                if (c1.}
-        } */
     
     }
 }
