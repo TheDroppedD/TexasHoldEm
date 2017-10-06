@@ -3,9 +3,9 @@ using System.Collections.Generic;
 namespace TexasHoldEm
 
 {
-    class Hand: IComparer
+    class Hand: IComparer<Card>
     {
-        private List<Card> cards = new List<Card>();
+        public List<Card> cards = new List<Card>();
         //private List<string> Suits = new List<string> { "Spades", "Hearts", "Clubs", "Diamonds" };
         private uint distinctscore = 0; //score of the Hand by running it through the PokerAlg
         private readonly int seen = 2; //amount of elements the player is allowed to see
@@ -48,16 +48,6 @@ namespace TexasHoldEm
             else
             {
                 return 0;
-            }
-        }
-        public int compareDScore(Hand x, Hand y)
-        {
-            if (x.getDistinctScore() < y.getDistinctScore()) {
-                return -1;
-            } else if(x.getDistinctScore() > y.getDistinctScore() ) {
-                return 1;
-            } else {
-                return 1;
             }
         }
 

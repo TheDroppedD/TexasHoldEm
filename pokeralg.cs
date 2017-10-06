@@ -62,7 +62,7 @@ namespace TexasHoldEm
                 }
             }
         }
-        Console.WriteLine(handCombinations.Count()); //Should be 21
+        Console.WriteLine(handCombinations.Count); //Should be 21
         //Next, iterate through list, calling 'makeDistinctScore' for each element of the list
         foreach(Hand h in handCombinations) {
             uint score = makeDistinctScore(h.getCards());
@@ -101,7 +101,7 @@ namespace TexasHoldEm
         return Int32.Parse(retEnum.ToString());
     }
 
-    int hand_rank( uint val ) 
+    public int hand_rank( uint val ) 
     {
     if (val > 6185) 
     {
@@ -182,7 +182,7 @@ namespace TexasHoldEm
                 return r;
         }
 
-        uint eval_5hand_fast(uint c1, uint c2, uint c3, uint c4, uint c5) 
+        public uint eval_5hand_fast(uint c1, uint c2, uint c3, uint c4, uint c5) 
         {
             int q = (int)((c1 | c2 | c3 | c4 | c5) >> 16);
             uint s;

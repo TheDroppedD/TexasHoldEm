@@ -162,9 +162,10 @@ namespace TexasHoldEm
         //Console.WriteLine(Players.Count);
         while(count != cPlayers.Count) //?
         {
+            //Console.WriteLine(currentPlayers);
             for(int i = currentPlayers - 1; i > -1; i--) 
             {
-            //exception where if player raises, re do rotation()
+            //exception where if player raises, re-do rotation()
             Console.WriteLine(Commcards.ToString());
             int n = Players[i].playerTurn(inBet);
             count += 1;
@@ -245,7 +246,13 @@ namespace TexasHoldEm
 
     public void showDown()
     {
-        PokerAlg sorter = new PokerAlg();
+        PokerAlg pa = new PokerAlg();
+        foreach(Player p  in Players) 
+        {
+            pa.findDistinctScore(p.Phand.cards);
+        }
+        Players.sortbyDS();
+        
     }
 
    }//Board

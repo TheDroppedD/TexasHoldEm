@@ -4,9 +4,9 @@ using System.Timers;
 namespace TexasHoldEm
 
 {
-    class Player
+    class Player : IComparer<Hand>
     {
-        private Hand Phand;
+        public Hand Phand;
         private int Chips;
         public Boolean isPlaying;
         private int AmountPaid;
@@ -139,5 +139,20 @@ namespace TexasHoldEm
             AmountPaid += amount;
             return amount;
         }//Done
+
+        public int Compare(Hand x, Hand y)
+        {
+            if (x.getDistinctScore() < y.getDistinctScore()) {
+                return -1;
+            } else if(x.getDistinctScore() > y.getDistinctScore() ) {
+                return 1;
+            } else {
+                return 1;
+            }
+        }
+
+        public void sortbyDS() {
+            Player.
+        }
     }
 }
