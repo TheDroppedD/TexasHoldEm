@@ -52,7 +52,7 @@ namespace TexasHoldEm
         }
         public int compareDScore(Hand x, Hand y)
         {
-            if (x.getDistinctScore() < y.getDistinctScore) {
+            if (x.getDistinctScore() < y.getDistinctScore()) {
                 return -1;
             } else if(x.getDistinctScore() > y.getDistinctScore() ) {
                 return 1;
